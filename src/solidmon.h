@@ -9,7 +9,8 @@
 #define SHARES_1_OR_2     (a==c || a==d || b==c || b==d)
 /* returns 1 if the pair shares exactly 2 alleles */
 #define SHARES_2     ((a==c && b==d) || (a==d && b==c))
-
+/*return 1 if one of the alleles is missing*/
+#define MISSING     (a==-1 || b==-1 || c==-1 || d==-1)
 
 /* prob of two genotypes given they are unrelated */
 #define UN_PROB     (p[a]*p[b]*(1.0 + (a!=b)) * p[c]*p[d]*(1.0 + (c!=d)))
