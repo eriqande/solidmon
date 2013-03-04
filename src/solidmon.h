@@ -11,6 +11,8 @@
 #define SHARES_2     ((a==c && b==d) || (a==d && b==c))
 /*return 1 if one of the alleles is missing*/
 #define MISSING     (a==-1 || b==-1 || c==-1 || d==-1)
+/*return a four-digit value of which indexes of alleles are missing*/
+#define indx_MISS (a==-1)*1000 + (b==-1)*100 + (c==-1)*10 + (d==-1) 
 
 /* prob of two genotypes given they are unrelated */
 #define UN_PROB     (p[a]*p[b]*(1.0 + (a!=b)) * p[c]*p[d]*(1.0 + (c!=d)))
