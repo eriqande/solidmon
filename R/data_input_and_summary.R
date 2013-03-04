@@ -1,4 +1,3 @@
-
 # read genotype data
 kids <- read.table("kids4solo.txt", colClasses="character", na.strings=c("NA", "0"), header=T, row.names=1)
 dads <- read.table("dads4solo.txt", colClasses="character", na.strings=c("NA", "0"), header=T, row.names=1)
@@ -43,7 +42,7 @@ excP <- as.double(sapply(af, exc.prob.func))
 ### HERE WE DO WHAT WE NEED TO IN ORDER TO PASS THESE THINGS INTO C
 # now, make a vector p of allele freqs to pass into C, and a vector ps of the indexes of where each locus starts in p
 p <- as.double(unlist(af))
-ps <- as.integer(cumsum(sapply(af,length))-1)
+ps <- as.integer(c(0,cumsum(sapply(af,length))-1))
 
 # get the number of loci, kids and dads. Note these are all class integer, so I don't coerce them...
 L <- length(dl)
