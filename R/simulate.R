@@ -15,13 +15,13 @@ GenoPairProbs <- function(p) {
 	outs <- .C("geno_pair_probs", as.integer(KK), as.double(p), res=double(length=N*3))
 	
 	# make the result an N by 3 matrix
-	matrix(outs$res, ncol=3, byrow=T)
-	
+	matrix(outs$res, ncol=3, byrow=T)	
 }	
 
 
 # here are some examples of how to use this:
 tt<-GenoPairProbs((1/1:100)/sum(1/1:100))  #  locus with 100 alleles
+tt<-GenoPairProbs( c(.5,.5))
 unclass(object.size(tt)) / 10^6  # memory used by tt, in Mb
 rr<-.25*tt[,1] + .5*tt[,2] + .25*tt[,3]  # probabities of the genotypes for full sibling pair
 rr<-rr/sum(rr)  # make them conditional probs (conditional on sharing at least one allele)
