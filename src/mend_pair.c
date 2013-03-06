@@ -5,7 +5,14 @@
 
 #define G(L,s,H,nS) (2*nS)*L + s*2 + H 
 
-/*generate all possible pairs between S vec and K vec but skip any pairs that exceed a pre-defined level of mendalian incompatibility */
+/*this function goes through all possible pairing of Sires and Kids and returns a table of
+the log likelihood of a pair being mendalian relateness over the mere chance of sharing 
+the same allele. 
+The fields of the output file is as follows: 
+indx of sir (starting with 1...) / indx of kids (starting w/ 1).. /
+pairing indicator for each locus (-1 - missing data, 0 - not sharing any allele, 1 - share at least 1 allele) / ... /
+# of loci having matching alleles / log prob of mendalian prob / log prob of shared allele/ log likelihood   
+*/
 
 int Pair_filter(int *max_incompat, int *S, int *K, double *P,  double *excP, int *L, int *nS, int *nK, int *ps)
 {
@@ -47,7 +54,7 @@ int Pair_filter(int *max_incompat, int *S, int *K, double *P,  double *excP, int
 				}				
 				
 			}
-			fprintf(out, "%i\t%lf\t%lf\n" ,match, prob_pair, unrel_prob);
+			fprintf(out, "%i\t%lf\t%lf\t%lf\n" ,match, prob_pair, unrel_prob, prob_pair-unrel_prob);
 		}
 	}
 	fclose(out);
