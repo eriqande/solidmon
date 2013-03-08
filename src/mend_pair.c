@@ -29,7 +29,7 @@ int Pair_filter(int *max_incompat, int *S, int *K, double *P,  double *excP, int
 	fprintf(out, "SIR_INDX\tKIDS_INDX\t");
 	for (j=0; j<num_L; j++)
 	    fprintf (out, "LOCUS_%i\t",j+1);
-	fprintf(out, "LOG_PROB_MEND\tLOG_SHARED\tLOG_LIKELIHOOD\n");
+	fprintf(out, "NUM_MATCH\tLOG_PROB_MEND\tLOG_SHARED\tLOG_LIKELIHOOD\n");
 	
 	//iterate for each dad 
 	for (s = 0; s < num_S; s++) { //iterate for each dad 
