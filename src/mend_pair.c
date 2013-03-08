@@ -38,7 +38,6 @@ int Pair_filter(int *max_incompat, int *S, int *K, double *P,  double *excP, int
 			double unrel_prob = 0;
 			int match = 0;
 			
-			//iterate thru each locus
 			fprintf(out, "%i\t%i\t" ,s+1, k+1);
 			for (j = 0, match=0; j < num_L ; j++) { //iterate thru each locus
 				a = S[G(j, s, 0, num_S)]; 
@@ -48,7 +47,7 @@ int Pair_filter(int *max_incompat, int *S, int *K, double *P,  double *excP, int
 				double *p =  P + ps[j];
 				
 				fprintf(out, "%i\t", (MISSING)*-1 + (!MISSING)*(SHARES_1_OR_2));
-				//fprintf(out, "%i %i %i %i , %i, %i, %i, \n", a, b, c, d, G(s, k, 0, j), G(s, k, 1,j), j);
+				
 				if (MISSING) 
 				    continue;
 				
