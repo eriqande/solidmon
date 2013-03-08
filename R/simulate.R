@@ -1,6 +1,6 @@
 
-setwd("/Users/eriq/Documents/git-repos/solidmon/src")
-dyn.load("solidmon.so")
+#setwd("/Users/eriq/Documents/git-repos/solidmon/src")
+dyn.load("/Users/eriq/Documents/git-repos/solidmon/src/solidmon.so")
 
 
 # wrapper to call geno_pair_probs with some allele frequencies
@@ -19,6 +19,7 @@ GenoPairProbs <- function(p) {
 }	
 
 
+if(FALSE) {
 # here are some examples of how to use this:
 tt<-GenoPairProbs((1/1:100)/sum(1/1:100))  #  locus with 100 alleles
 tt<-GenoPairProbs( c(.5,.5))
@@ -31,4 +32,4 @@ unrel<-tt[,1]/sum(tt[,1])  # conditional probs for unrelated pair
 # take a sample of genotype probs (given they are unrelated) from unrelated pairs given that
 # they share at least one allele
 boing <- sample(tt[,1], 10^5, replace=T, prob=unrel) 
-                            
+}                 
