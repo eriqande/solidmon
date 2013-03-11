@@ -63,5 +63,7 @@ K <- as.integer(unlist(vectize.geno.list(kl, af)))
 # this list has all the variables that we need for the C function call
 C.func.input <- list(S=S, K=K, p=p, E=excP, L=L, nS=nS, nK=nK, ps=ps)
 
+
+
 # If needed, we can confirm that they have the right types, just fun.  Two should be doubles and the rest integer
 # lapply(C.func.input, typeof)
