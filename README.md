@@ -49,7 +49,8 @@ results in our paper:
 1)  Compile  all of the C source files into shared objects that R
 can interface with
 
-cd PATH_TO_SOLIDMON_pkg R CMD SHLIB src/simulate.c  
+cd PATH_TO_SOLIDMON_pkg
+R CMD SHLIB src/simulate.c  
 R  CMD  SHLIB src/mend_pair.c
 
 
@@ -60,7 +61,7 @@ genotype file, the dad genotype file and the output file you want
 SOLOMON  to write to. These can be specified when invoking R from
 the command line like so:
 
-R CMD BATCH  ‐‐vanilla  ‐slave  ’‐‐args  kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  out_file="out/Output_SOLOMON.txt"’  SOLOMON.R
+R CMD BATCH  --vanilla  -slave  '--args  kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  out_file="out/Output_SOLOMON.txt"'  SOLOMON.R
 
 SOLOMON.R contains mostly code written by Mark Christie.  We 
 commented out the GUI stuff in it and selected only the bit for 
@@ -78,7 +79,7 @@ dad genotype file and the name of the output file. You should
 also provide the number of simulation replicates.   100000   (1e05)
 is reasonable.
 
-R  CMD  BATCH  ‐‐vanilla  ‐slave ’‐‐args kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  REPS=1e05   out_file="out/Output_SOLIDMON.txt"’ SOLIDMON.R
+R  CMD  BATCH  --vanilla  ‐slave '--args kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  REPS=1e05   out_file="out/Output_SOLIDMON.txt"' SOLIDMON.R
 
 
 
