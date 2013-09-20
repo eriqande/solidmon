@@ -84,10 +84,11 @@ dad genotype file and the name of the output file. You should
 also provide the number of simulation replicates.   100000   (1e05)
 is reasonable.
 
-R  CMD  BATCH  --vanilla  ‐slave '--args kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  REPS=1e05   out_file="out/Output_SOLIDMON.txt"' SOLIDMON.R
+R  CMD  BATCH  --vanilla  -slave '--args kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  REPS=1e05   out_file="out/Output_SOLIDMON.txt"' SOLIDMON.R
 
 
-Output from the commands above will end up in the "out" directory. 
+Output from the commands above will end up in the "out" directory. For example, the output
+from solidmon will appear in out/Output_SOLIDMON.txt.
 
 
 
