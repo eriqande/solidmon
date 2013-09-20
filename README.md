@@ -1,8 +1,8 @@
 README
 
-These  materials  are supporting data for a comment that Eric An‐
-derson and Thomas Ng sent to Bioinformatics regarding  the  soft‐
-ware SOLOMON which was authored by Mark Christie and others.
+These  materials  are supporting data for a comment that Eric 
+Anderson and Thomas Ng sent to Bioinformatics regarding  the  
+software SOLOMON which was authored by Mark Christie and others.
 
 We  have  implemented  software akin to SOLOMON, but differing in
 that it is based upon the likelihood‐ratio  and  consequently  is
@@ -17,22 +17,21 @@ Additionally,  some  segments  of the code are implemented in the
 compiled C language which reduces computational time as well.
 
 We are not releasing SOLIDMON here as a  piece  of  software  for
-general  use  by molecular ecologists, etc.  Though they may cer‐
-tainly adapt it to their own situation.  We hope that it will  be
+general  use  by molecular ecologists, etc.  Though they may
+certainly adapt it to their own situation.  We hope that it will  be
 useful in upating the program SOLOMON.
 
 SOLIDMON  software  was written in part while ECA was working for
 the government of the United States of America.   Accordingly  it
-is  not subject to copyright in the U.S.  It is in the public do‐
-main.
+is  not subject to copyright in the U.S.  It is in the public domain.
 
 We include here a portion of the SOLOMON code in  SOLOMON.R  that
 we  modified to allow easy batch use without the Tcl/Tk GUI. This
 code is not part of the SOLIDMON package.
 
 THERE IS NO WARRANTY FOR THIS SOFTWARE. WE  PROVIDE  THE  PROGRAM
-âAS  ISâ  WITHOUT  WARRANTY  OF ANY KIND, EITHER EXPRESSED OR IM‐
-PLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED  WARRANTIES  OF
+AS IS  WITHOUT  WARRANTY  OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED  WARRANTIES  OF
 MERCHANTABILITY  AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE
 RISK AS TO THE QUALITY AND PERFORMANCE OF  THE  PROGRAM  IS  WITH
 YOU.  SHOULD  THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
@@ -43,8 +42,8 @@ Questions? contact  eric.anderson@noaa.gov
 
 
 
-Tutorial on running SOLIDMON and SOLOMON as we did to get the re‐
-sults in our paper:
+Tutorial on running SOLIDMON and SOLOMON as we did to get the
+results in our paper:
 
 
 1)  Compile  all of the C source files into shared objects that R
@@ -63,9 +62,9 @@ the command line like so:
 
 R CMD BATCH  ‐‐vanilla  ‐slave  ’‐‐args  kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  out_file="out/Output_SOLOMON.txt"’  SOLOMON.R
 
-SOLOMON.R contains mostly code written by Mark Christie.  We com‐
-mented out the GUI stuff in it and selected only the bit for‐sin‐
-gle parent parentage.  Since we were trying to understand how the
+SOLOMON.R contains mostly code written by Mark Christie.  We 
+commented out the GUI stuff in it and selected only the bit for 
+single parent parentage.  Since we were trying to understand how the
 program  worked  we disabled the part of the program that cleaned
 up all its intermediate files.  If you plan to run SOLOMON.R more
 than once, it is important to clean up those files yourself.  So,
@@ -75,8 +74,8 @@ then remove all the other files in the "out" directory.
 
 
 3) To run SOLIDMON you provide paths for the kid  genotype  file,
-dad genotype file and the name of the output file. You should al‐
-so provide the number of simulation replicates.   100000   (1e05)
+dad genotype file and the name of the output file. You should 
+also provide the number of simulation replicates.   100000   (1e05)
 is reasonable.
 
 R  CMD  BATCH  ‐‐vanilla  ‐slave ’‐‐args kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  REPS=1e05   out_file="out/Output_SOLIDMON.txt"’ SOLIDMON.R
@@ -86,11 +85,11 @@ R  CMD  BATCH  ‐‐vanilla  ‐slave ’‐‐args kidfile="demo/kids1.txt" da
 
 
 The directories snp_data and micro_data contain data sets that we
-simulated under the two data scenarios  described  in  our  manu‐
-script.   The kids in the "kids" files are named according to who
+simulated under the two data scenarios  described  in  our  
+manuscript.   The kids in the "kids" files are named according to who
 their parents are (in the corresponding "dads" file), unless they
 have  no  parents  in  the "dads" file, which is apparent because
-they are named "Indiv_Fem_X_Y", where X and Y are numbers.  Indi‐
-viduals in the "dads" files that have names like "Indiv_Male_X_Y"
+they are named "Indiv_Fem_X_Y", where X and Y are numbers.  
+Individuals in the "dads" files that have names like "Indiv_Male_X_Y"
 will have offspring in the corresponding "kids" file, while those
 with names like "Indiv_Fem_X_Y" will not.
