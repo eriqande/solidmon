@@ -55,6 +55,11 @@ R  CMD  SHLIB src/mend_pair.c
 
 
 
+1.5) MAKE SURE that there is a directory called "out" in the current
+directory.  There should be one supplied from tagged version in git.  If not
+lots of crap will bomb.  Some of the files will be looking to write 
+the output in that directory.
+
 
 2)  To  run  SOLOMON  in batch mode you provide paths for the kid
 genotype file, the dad genotype file and the output file you want
@@ -82,6 +87,7 @@ is reasonable.
 R  CMD  BATCH  --vanilla  ‐slave '--args kidfile="demo/kids1.txt" dadfile="demo/dads1.txt"  REPS=1e05   out_file="out/Output_SOLIDMON.txt"' SOLIDMON.R
 
 
+Output from the commands above will end up in the "out" directory. 
 
 
 
